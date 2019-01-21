@@ -1,0 +1,4 @@
+<button (click)="onClick($event)">Fire!</button>
+<div class="history">
+  <p *ngFor="let item of (history$ | async)">{{ item }}</p>
+</div>

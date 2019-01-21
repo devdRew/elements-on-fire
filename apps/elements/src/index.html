@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Elements</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <base href="/" />
+  <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/zone.js/0.8.26/zone.min.js"
+  ></script>
+</head>
+<body>
+<eof-root></eof-root>
+<div>
+  Custom Element 1
+  <eof-element-wrapper id="custom-element-first" input='{"id":0}'"></eof-element-wrapper>
+</div>
+<div>
+  Custom Element 2
+  <eof-element-wrapper id="custom-element-second" input='{"id":0}'"></eof-element-wrapper>
+</div>
+<div>
+  <label for="input">Input:</label>
+  <textarea id="input"></textarea>
+</div>
+<div>
+  <label for="element">Element:</label>
+  <select id="element">
+    <option value="custom-element-first">First</option>
+    <option value="custom-element-second">Second</option>
+  </select>
+</div>
+<button id="apply">Apply</button>
+</body>
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', () => {
+    const input = document.getElementById('input');
+    const apply = document.getElementById('apply');
+    const element = document.getElementById('element');
+
+    apply.addEventListener('click', e => {
+      e.preventDefault();
+      e.stopPropagation();
+      document.getElementById(element.value).setAttribute('input', input.value);
+    });
+
+    ['custom-element-second', 'custom-element-first'].forEach((id) => {
+      document.getElementById(id).addEventListener('fire', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log(`[${id}] Gotcha! Details:`, e.detail);
+      });
+    });
+  });
+</script>
+</html>
