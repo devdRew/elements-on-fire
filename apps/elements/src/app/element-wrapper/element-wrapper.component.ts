@@ -4,7 +4,7 @@ import { ElementInput } from './element-input.interface';
 @Component({
   selector: 'eof-element-wrapper',
   template: `<eof-element [id]="data.id" (fire)="fire.emit($event)"></eof-element>`,
-  styles: [`:host { display: block; }`],
+  styles: [`:host { display: inline-block; }`],
 })
 export class ElementWrapperComponent {
   @Input() set input(value: string) {

@@ -44,3 +44,16 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+```
+create-nx-workspace angular-elements-on-fire
+cd angular-elements-on-fire/
+ng g app regular
+ng g app elements
+ng g lib shared
+npm i @angular/elements --save
+npm i @webcomponents/custom-elements --save
+npm i @webcomponents/webcomponentsjs --save
+ng serve --project=elements
+ng serve --project=regular
+```

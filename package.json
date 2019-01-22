@@ -10,6 +10,7 @@
     "build:elements": "ng build --project=elements --aot --output-path=dist/apps/dev/elements",
     "build:prod:regular": "ng build --prod --project=regular --aot --output-path=dist/apps/prod/regular",
     "build:prod:elements": "ng build --prod --project=elements --aot --output-path=dist/apps/prod/elements",
+    "deploy": "npm run build && firebase deploy",
     "test": "ng test",
     "lint": "./node_modules/.bin/nx lint && ng lint",
     "e2e": "ng e2e",
@@ -37,6 +38,7 @@
     "@angular/compiler": "^7.0.0",
     "@angular/core": "^7.0.0",
     "@angular/elements": "^7.2.1",
+    "@angular/fire": "^5.1.1",
     "@angular/forms": "^7.0.0",
     "@angular/platform-browser": "^7.0.0",
     "@angular/platform-browser-dynamic": "^7.0.0",
@@ -48,6 +50,7 @@
     "@webcomponents/custom-elements": "^1.2.1",
     "@webcomponents/webcomponentsjs": "^2.2.4",
     "core-js": "^2.5.4",
+    "firebase": "^5.8.0",
     "rxjs": "~6.3.3",
     "zone.js": "^0.8.26"
   },

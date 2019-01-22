@@ -1,0 +1,4 @@
+<div *ngFor="let talk of talks$ | async">
+  <h4>{{ talk.name }}</h4>
+  <p>by {{ talk.speaker }}, {{ talk.title }} @ {{ talk.company }}</p>
+</div>
